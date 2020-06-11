@@ -14,9 +14,8 @@
 #define NUM_RELAYS 3
 
 // Heart Rate Zones
-#define ZONE_1 70 // 70 bpm
-#define ZONE_2 80 // 100 bpm
-#define ZONE_3 90 // 120 bpm
+#define ZONE_1 100 // 70 bpm
+#define ZONE_2 120 // 100 bpm
 
 // Assign each GPIO to a relay
 uint8_t relayGPIOs[NUM_RELAYS] = {25, 26, 27};
@@ -61,8 +60,8 @@ static void notifyCallback(
       }
       digitalWrite(relayGPIOs[1], LOW);
     }
-    else if(pData[1] > ZONE_3) {
-      Serial.println("ZONE 2!");
+    else if(pData[1] > ZONE_2) {
+      Serial.println("ZONE 3!");
       for(int i=1; i<=NUM_RELAYS; i++){
         digitalWrite(relayGPIOs[i-1], HIGH);
       }
