@@ -171,7 +171,7 @@ void loop() {
 
   // Perform Scan
   if (doScan) {
-    Serial.printf("%lu [info] Performing Scan...", millis());
+    Serial.printf("%lu [info] Performing Scan...\n", millis());
     BLEDevice::getScan()->start(5, false); 
     delay(5000);
   }
